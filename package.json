@@ -1,0 +1,24 @@
+{
+  "name": "github-loc",
+  "version": "1.0.0",
+  "description": "get lines of code of github project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jasonzhouu/github-loc.git"
+  },
+  "keywords": [
+    "github",
+    "loc",
+    "npm"
+  ],
+  "author": "周宇盛Yusheng Zhou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasonzhouu/github-loc/issues"
+  },
+  "homepage": "https://github.com/jasonzhouu/github-loc#readme"
+}
