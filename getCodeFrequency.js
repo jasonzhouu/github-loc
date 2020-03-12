@@ -8,5 +8,5 @@ module.exports = function getCodeFrequency(repoName, token) {
     headers: {
       Authentication: `token ${token}`,
     },
-  });
+  }).then((stat) => stat.data);
 };
