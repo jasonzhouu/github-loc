@@ -12,6 +12,18 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/test/getCodeFrequency.test.js"
-        }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "index.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/index.js",
+            "args": [
+                "bitcoin/bitcoin",
+            ]
+        },
     ]
 }
