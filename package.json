@@ -1,6 +1,6 @@
 {
   "name": "github-loc",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "get lines of code of github project",
   "main": "getCodeFrequency.js",
   "scripts": {
@@ -8,6 +8,9 @@
   },
   "bin": {
     "github-loc": "./index.js"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",
