@@ -22,6 +22,7 @@
             ],
             "program": "${workspaceFolder}/index.js",
             "args": [
+                "--repo",
                 "bitcoin/bitcoin",
             ]
         },
