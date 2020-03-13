@@ -1,8 +1,24 @@
 const getCodeFrequency = require('./getCodeFrequency');
 
+const ARGUMENT = {
+  detail: '--detail',
+  token: '--token',
+};
+
 const repoName = process.argv[2];
-const token = process.argv[3];
-const detail = process.argv[4] === '--detail';
+let token;
+let detail;
+
+if (process.argv.includes(ARGUMENT.detail)) {
+  detail = true;
+} else {
+  detail = false;
+}
+
+if (process.argv.includes(ARGUMENT.token)) {
+  const index = process.argv.indexOf(ARGUMENT.token);
+  token = process.argv[index + 1];
+}
 
 (async function IIFE() {
   const { totalLoc, languageDetailsList } = await getCodeFrequency({
