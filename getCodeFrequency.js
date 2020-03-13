@@ -3,7 +3,7 @@ const getLanguageDetails = require('./getLanguageDetails.js');
 
 const calculateLoc = require('./calculateLoc');
 
-module.exports = async function getCodeFrequency({ repoName, token }) {
+module.exports = async function getCodeFrequency({ repoName, token, detail }) {
   const octokit = new Octokit({
     auth: token,
   });
@@ -12,12 +12,12 @@ module.exports = async function getCodeFrequency({ repoName, token }) {
 
   const { data } = await octokit.request(url);
 
-  const totalLoc = calculateLoc(data);
+  const result = {};
+  result.totalLoc = calculateLoc(data);
 
-  const languageDetailsList = await getLanguageDetails(repoName, octokit);
+  if (detail === true) {
+    result.languageDetailsList = await getLanguageDetails(repoName, octokit);
+  }
 
-  return {
-    totalLoc,
-    languageDetailsList,
-  };
+  return result;
 };
