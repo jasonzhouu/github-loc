@@ -1,13 +1,19 @@
 const getCodeFrequency = require('./getCodeFrequency');
 
 const ARGUMENT = {
+  repoName: '--repo',
   detail: '--detail',
   token: '--token',
 };
 
-const repoName = process.argv[2];
+let repoName;
 let token;
 let detail;
+
+if (process.argv.includes(ARGUMENT.repoName)) {
+  const index = process.argv.indexOf(ARGUMENT.repoName);
+  repoName = process.argv[index + 1];
+}
 
 if (process.argv.includes(ARGUMENT.detail)) {
   detail = true;
