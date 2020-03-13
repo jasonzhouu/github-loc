@@ -4,9 +4,10 @@ const repoName = process.argv[2];
 const token = process.argv[3];
 
 (async function IIFE() {
-  const loc = await getCodeFrequency({ repoName, token });
+  const { totalLoc, languageDetailsList } = await getCodeFrequency({ repoName, token });
   console.log(`Repository: \t https://github.com/${repoName} \n`
-    + `Line of code: \t ${loc}`);
+    + `Line of code: \t ${totalLoc}`);
+  console.log(languageDetailsList);
 }());
 
 module.exports = getCodeFrequency;

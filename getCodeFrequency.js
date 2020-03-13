@@ -1,4 +1,5 @@
 const { Octokit } = require('@octokit/rest');
+const getLanguageDetails = require('./getLanguageDetails.js');
 
 const calculateLoc = require('./calculateLoc');
 
@@ -11,13 +12,12 @@ module.exports = async function getCodeFrequency({ repoName, token }) {
 
   const { data } = await octokit.request(url);
 
-  let loc;
+  const totalLoc = calculateLoc(data);
 
-  try {
-    loc = calculateLoc(data);
-  } catch (error) {
-    console.error(error);
-  }
+  const languageDetailsList = await getLanguageDetails(repoName, octokit);
 
-  return loc;
+  return {
+    totalLoc,
+    languageDetailsList,
+  };
 };
