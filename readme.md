@@ -13,7 +13,6 @@ githubLoc({ repoName, token })
   .then((data) => {
     console.log(data);
   });
-// { totalLoc: 601986 }
 ```
 
 request github token on page: https://github.com/settings/tokens
