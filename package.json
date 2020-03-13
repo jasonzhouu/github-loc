@@ -2,7 +2,7 @@
   "name": "github-loc",
   "version": "1.0.0",
   "description": "get lines of code of github project",
-  "main": "index.js",
+  "main": "getCodeFrequency.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,7 +15,7 @@
     "loc",
     "npm"
   ],
-  "author": "周宇盛Yusheng Zhou",
+  "author": "周宇盛 Yusheng Zhou <jasonzhouu@outlook.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jasonzhouu/github-loc/issues"

@@ -32,5 +32,3 @@ if (process.argv.includes(ARGUMENT.token)) {
     console.log(languageDetailsList);
   }
 }());
-
-module.exports = getCodeFrequency;

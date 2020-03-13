@@ -1,9 +1,8 @@
 const getCodeFrequency = require('../getCodeFrequency');
-const config = require('./config');
 
-const { repoName } = config;
+const repoName = 'bitcoin/bitcoin';
 
-getCodeFrequency(repoName)
+getCodeFrequency({ repoName })
   .then((data) => {
     console.log(data);
   });
