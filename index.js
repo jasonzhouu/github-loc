@@ -1,12 +1,12 @@
 const getCodeFrequency = require('./getCodeFrequency');
 
-const repoUrl = process.argv[2];
+const repoName = process.argv[2];
 const token = process.argv[3];
 
-getCodeFrequency(repoUrl, token)
-  .then((loc) => {
-    console.log(`Repository: \t https://github.com/${repoUrl} \n`
+(async function IIFE() {
+  const loc = await getCodeFrequency({ repoName, token });
+  console.log(`Repository: \t https://github.com/${repoName} \n`
     + `Line of code: \t ${loc}`);
-  });
+}());
 
 module.exports = getCodeFrequency;

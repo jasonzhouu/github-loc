@@ -1,23 +1,23 @@
-const axios = require('axios');
+const { Octokit } = require('@octokit/rest');
+
 const calculateLoc = require('./calculateLoc');
 
-module.exports = function getCodeFrequency(repoName, token) {
-  const url = `https://api.github.com/repos/${repoName}/stats/code_frequency`;
+module.exports = async function getCodeFrequency({ repoName, token }) {
+  const octokit = new Octokit({
+    auth: token,
+  });
 
-  let axiosPromise;
-  if (token !== undefined) {
-    axiosPromise = axios.get(url, {
-      // 参考：https://flaviocopes.com/axios-send-authorization-header/
-      headers: {
-        Authentication: `token ${token}`,
-      },
-    });
-  } else {
-    axiosPromise = axios.get(url);
+  const url = `/repos/${repoName}/stats/code_frequency`;
+
+  const { data } = await octokit.request(url);
+
+  let loc;
+
+  try {
+    loc = calculateLoc(data);
+  } catch (error) {
+    console.error(error);
   }
 
-  return axiosPromise.then((stat) => calculateLoc(stat.data))
-    .catch((error) => {
-      if (error) throw error;
-    });
+  return loc;
 };
