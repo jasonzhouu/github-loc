@@ -1,3 +1,6 @@
+[![npm version][npm-image]][npm-url]
+[![install size][install-size-image]][install-size-url]
+
 Used to caculate line of code(LOC) of github repository.
 
 ## example
@@ -18,3 +21,7 @@ githubLoc({ repoName, token })
 request github token on page: https://github.com/settings/tokens
 <img src="https://i.ibb.co/BKVmpwF/image.png" alt="image" border="0">
 
+[npm-image]: https://flat.badgen.net/npm/v/github-loc
+[npm-url]: https://www.npmjs.com/package/github-loc
+[install-size-image]: https://flat.badgen.net/packagephobia/install/github-loc
+[install-size-url]: https://packagephobia.now.sh/result?p=github-loc
