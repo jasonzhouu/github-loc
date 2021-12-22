@@ -19,7 +19,7 @@ githubLoc({ repoName, token })
 ```
 
 request github token on page: https://github.com/settings/tokens
-<img src="https://i.ibb.co/BKVmpwF/image.png" alt="image" border="0">
+<img src="https://camo.githubusercontent.com/b39d8fca0e7cc4dceb2a3f527146d7a25a9f5e8abd8ab82686685353c0083a7b/68747470733a2f2f692e6962622e636f2f424b566d7077462f696d6167652e706e67" alt="image" border="0">
 
 [npm-image]: https://flat.badgen.net/npm/v/github-loc
 [npm-url]: https://www.npmjs.com/package/github-loc
